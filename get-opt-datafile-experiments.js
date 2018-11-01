@@ -1,12 +1,19 @@
+//Config Details
+var projectId = "11372200340";
+var dataFileURL = "https://cdn.optimizely.com/json/" + projectId + ".json";
 var experimentKeys = [];
 
-var optFSJSON = $.ajax({
-        url: "https://cdn.optimizely.com/json/8511187875.json",
-        method: "GET"})
-    	.done(function(responseText) {
-            window.dataFile = JSON.parse(responseText);
+//Pulls in JS SDK
+$("body").append('<script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.js"></script>');
 
-            for (i = 0; i < dataFile.experiments.length; i++) {
-                experimentKeys.push(dataFile.experiments[i].key);
-            };
+//Grabs project datafile, pulls out experimentKeys
+$.ajax({
+    url: dataFileURL,
+    method: "GET"})
+    .done(function(responseText) {
+        window.dataFile = JSON.parse(responseText);
+        
+        for (i = 0; i < dataFile.experiments.length; i++) {
+            experimentKeys.push(dataFile.experiments[i].key);
+        };
     });
