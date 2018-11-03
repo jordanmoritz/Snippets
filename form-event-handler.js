@@ -25,7 +25,7 @@ for (var e in eventDetails) {
         utag.link(eventDataObject, null, [170]);
         formProgress.push(event_label);
     });
-};
+}
 
 //Builds event object to accompany each event
 function buildEventDataObject(event_category, event_action, event_label) {
@@ -43,7 +43,7 @@ function buildEventDataObject(event_category, event_action, event_label) {
     };
     
     return eventDataObject;
-};
+}
 
 //The unload event handler that triggers the form abandonment event
 //Should be built further to ensure the unload event isn't due to a submission

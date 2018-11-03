@@ -12,9 +12,9 @@ $(window).scroll(function() {
 		var inView = elementInView($("div.kyloRen-form")[0]);
 		if (inView) {
 			elemViewed = true;
-			utag_data.virtual_pageview = utag_data['dom.url'].replace('/de', '/de/form')
+			utag_data.virtual_pageview = utag_data['dom.url'].replace('/de', '/de/form');
 			utag_data.page_step = "Form 1";
 			utag.view(utag_data);
-        };
-    };
+        }
+    }
 });
